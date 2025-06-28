@@ -4,11 +4,6 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def home():
-    return render_template("base.html")
-
-
-@app.route("/length")
 def length():
     return render_template("length.html")
 
