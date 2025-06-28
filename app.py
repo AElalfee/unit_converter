@@ -11,3 +11,8 @@ def home():
 @app.route("/length")
 def length():
     return render_template("length.html")
+
+
+@app.route("/weight")
+def weight():
+    return render_template("weight.html")
