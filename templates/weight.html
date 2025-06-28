@@ -7,17 +7,19 @@
         <input type="number" name="value" placeholder="Enter value" required />
         <p class='label'>from</p>
         <select name="from_unit" required>
-            <option value="g">g</option>
-            <option value="kg">kg</option>
+            {% for unit in units %}
+            <option value="{{ unit.name }}">{{ unit.label }}</option>
+            {% endfor %}
         </select>
         <p class='label'>to</p>
         <select name="to_unit" required>
-            <option value="g">g</option>
-            <option value="kg">kg</option>
+            {% for unit in units %}
+            <option value="{{ unit.name }}">{{ unit.label }}</option>
+            {% endfor %}
         </select>
         <button type="submit" class="btn-submit">Convert</button>
     </form>
 
     <h4 class="result-header">Result:</h4>
-    <p class="result">100 kg = 100000 g</p>
+    <p class="result">{% if result %}{{result}}{% endif %}</p>
 {% endblock %}
