@@ -16,3 +16,8 @@ def length():
 @app.route("/weight")
 def weight():
     return render_template("weight.html")
+
+
+@app.route("/temperature")
+def temperature():
+    return render_template("temperature.html")

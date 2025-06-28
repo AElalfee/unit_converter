@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Temperature Converter</h2>
+
+    <form method="POST">
+        <input type="number" name="value" placeholder="Enter value" required />
+        <p class='label'>from</p>
+        <select name="from_unit" required>
+            <option value="c">c</option>
+            <option value="f">f</option>
+        </select>
+        <p class='label'>to</p>
+        <select name="to_unit" required>
+            <option value="c">c</option>
+            <option value="f">f</option>
+        </select>
+        <button type="submit" class="btn-submit">Convert</button>
+    </form>
+
+    <h4 class="result-header">Result:</h4>
+    <p class="result">30 c = 86 f</p>
+{% endblock %}
