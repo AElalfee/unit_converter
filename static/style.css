@@ -77,20 +77,20 @@ label {
 input[type="number"],
 select {
     width: 100%;
-    margin: 0.68rem 0;
+    margin: 1rem 0;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
 .label {
-    margin: 1rem 0;
+    margin: 1rem 0 0 0;
     font-weight: bold;
 }
 
 .btn-submit {
     width: 100%;
-    margin: 0.68rem 0;
+    margin: 0.1rem 0;
     background-color: #0066cc;
     color: white;
     padding: 0.7rem 1.2rem;
@@ -116,5 +116,5 @@ select {
 }
 
 .result-header{
-    margin: 0.68rem 0;
+    margin: 0.1rem 0;
 }
