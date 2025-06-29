@@ -1,9 +1,11 @@
+from datetime import datetime
+
 from flask import Flask, render_template, request
 
-from conversions import convert_length, convert_weight, convert_temperature
+from conversions import convert_length, convert_temperature, convert_weight
 from models.length import Length
-from models.weight import Weight
 from models.temperature import Temperature
+from models.weight import Weight
 
 app = Flask(__name__)
 
@@ -19,7 +21,9 @@ def length():
             result = convert_length(value, from_unit, to_unit)
         except (ValueError, KeyError):
             result = "Invalid input"
-    return render_template("length.html", result=result, units=Length)
+    return render_template(
+        "length.html", result=result, units=Length, year=datetime.now().year
+    )
 
 
 @app.route("/weight", methods=["GET", "POST"])
@@ -33,7 +37,9 @@ def weight():
             result = convert_weight(value, from_unit, to_unit)
         except (ValueError, KeyError):
             result = "Invalid input"
-    return render_template("weight.html", result=result, units=Weight)
+    return render_template(
+        "weight.html", result=result, units=Weight, year=datetime.now().year
+    )
 
 
 @app.route("/temperature", methods=["GET", "POST"])
@@ -47,4 +53,6 @@ def temperature():
             result = convert_temperature(value, from_unit, to_unit)
         except (ValueError, KeyError):
             result = "Invalid input"
-    return render_template("temperature.html", result=result, units=Temperature)
+    return render_template(
+        "temperature.html", result=result, units=Temperature, year=datetime.now().year
+    )
