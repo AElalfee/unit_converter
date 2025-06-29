@@ -40,6 +40,13 @@ unit_converter/
 │   ├── weight.py               # Enum for weight units
 │   └── temperature.py          # Enum for temperature units
 │
+├── tests/
+│   ├── __init__.py
+│   ├── test_length_conversion.py               # tests for length conversion
+│   ├── test_weight_conversion.py               # tests for weight conversion
+│   ├── test_temperature_conversion.py          # tests for temperature conversion
+│   └── test_routes.py                          # tests for app routes
+│
 ├── conversions.py              # contains conversion logic
 │
 ├── requiremetns.txt            # contains all required packages
@@ -81,4 +88,19 @@ flask --app app run
 
 Then visit `http://localhost:5000` in your browser.
 
+### 5. To run tests
+
+```bash
+ pytest
+===================================================== test session starts ======================================================
+platform win32 -- Python 3.13.5, pytest-8.4.1, pluggy-1.6.0
+collected 13 items                                                                                                              
+
+tests\test_length_conversion.py ...                                                                                       [ 23%]
+tests\test_routes.py ...                                                                                                  [ 46%]
+tests\test_temperature_conversion.py ....                                                                                 [ 76%]
+tests\test_weight_conversion.py ...                                                                                       [100%]
+
+====================================================== 13 passed in 0.25s ======================================================
+```
 ---
